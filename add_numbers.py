@@ -9,6 +9,10 @@ def main():
     number2 = number1 + number2 + number3
     print(number3 + number2)
     
+
+
+
+
 if __name__ == "__main__":
     main()
 
