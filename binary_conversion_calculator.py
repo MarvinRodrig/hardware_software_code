@@ -12,7 +12,7 @@ def decimal_conversion(binary):
 def main():
     print("1. Binary -> Decimal")
     print("2. Decimal -> Binary")
-    version = input("Enter conversion type:")
+    version = int(input("Enter conversion type:"))
     if version == 1:
         binary_conversion(version)
     elif version == 2:
