@@ -1,3 +1,5 @@
+from os import system, name
+
 def binary_conversion(decimal):
     while True:
         decimal = input("Input binary number to convert to decimal: ")
@@ -5,49 +7,77 @@ def binary_conversion(decimal):
     
 
 def decimal_conversion(binary):
-    while True:
-        number = '00000000'
-        binary = int(input("Input decimal number to convert to binary: "))
-        while (binary > 0):
+    number = '0'
+    binary = int(input("Input decimal number to convert to binary: "))
+    u = binary
+    while (binary > 0):
             if (binary >= 64):
-                number += '01000000'
+                number += '1'
                 binary -= 64
-            elif (binary >= 32):
-                number += '00100000'
+            else:
+                number+='0'
+            if (binary >= 32):
+                number += '1'
                 binary -= 32
-            elif (binary >= 16):
-                number += '00010000'
+            else:
+                number+='0'
+            if (binary >= 16):
+                number += '1'
                 binary -= 16
-            elif (binary >= 8):
-                number += '00001000'
+            else:
+                number+='0'
+            if (binary >= 8):
+                number += '1'
                 binary -= 8
-            elif (binary >= 4):
-                number += '00000100'
+            else:
+                number+='0'
+            if (binary >= 4):
+                number += '1'
                 binary -= 4
-            elif (binary >= 2):
-                number += '00000010'
+            else:
+                number+='0'            
+            if (binary >= 2):
+                number += '1'
                 binary -= 2
-            elif (binary >= 1):
-                number += '00000001'
+            else:
+                number+='0'
+            if (binary >= 1):
+                number += '1'
                 binary -= 1
-        print(number)
-        break
+            else:
+                number+='0'
+            print("The binary number for " + str(u) + " equals " +number)
+
+def clear_screen():
+    if name == 'nt':
+        _ = system('cls')
+    else:
+        _ = system('clear')
+
 
 def main():
+    clear_screen()
     print("1. Binary -> Decimal")
     print("2. Decimal -> Binary")
     while True:
-        version = input("Enter conversion type:")
+        version = input("Enter conversion type: ")
         if version == '1':
             binary_conversion(version)
-            break
         elif version == '2':
             decimal_conversion(version)
+        else:
+            print("This conversion type doesn't exist")
+        more= input("Hit Enter to continue or q to quit: ")
+        if more == 'q':
             break
         else:
-            print("Invalid Input")
-             
+            continue
+    
+
+
 if __name__ == "__main__":
     main()
 
 #for this project, give a description explaining the code with a date.  
+
+
