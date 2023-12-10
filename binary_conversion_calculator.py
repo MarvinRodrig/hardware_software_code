@@ -1,13 +1,16 @@
 from os import system, name
 
 def binary_conversion(decimal):
-    while True:
-        decimal = input("Input binary number to convert to decimal: ")
-        break
-    
+    number = 0
+    decimal = input("Input binary number to convert to decimal: ")
+    for a in decimal:
+        number *= 2
+        number += int(a)
+    print("The decimal number for " + decimal + " equals " + str(number))
 
+    
 def decimal_conversion(binary):
-    number = '0'
+    number = ''
     binary = int(input("Input decimal number to convert to binary: "))
     u = binary
     while (binary > 0):
@@ -48,6 +51,7 @@ def decimal_conversion(binary):
                 number+='0'
             print("The binary number for " + str(u) + " equals " +number)
 
+
 def clear_screen():
     if name == 'nt':
         _ = system('cls')
@@ -73,7 +77,6 @@ def main():
         else:
             continue
     
-
 
 if __name__ == "__main__":
     main()

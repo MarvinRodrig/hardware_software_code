@@ -1,4 +1,5 @@
-'''
+#old version
+''' 
 def display_menu():
     menu_dict={'1':'Apples', '2':'Bananas', '3':'Cherries', 'X':'Pick your own'}
     while True:
@@ -25,10 +26,8 @@ def display_menu():
 def main():
     menu_dict=display_menu()
 '''
-    # print(list(menu_dict.items())) this help show all data kept in the dictionary
-    # print(list(menu_dict)) this shows all key strings will give a value
-    # print(list(menu_dict.values())) This shows all the values you can get from the keywords
 
+#new version
 def display_menu():
     menu_dict={'1':'Apples', '2':'Bananas', '3':'Cherries', 'X':'Pick your own'}
     while True:
@@ -52,3 +51,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    # print(list(menu_dict.items())) this help show all data kept in the dictionary
+    # print(list(menu_dict)) this shows all key strings will give a value
+    # print(list(menu_dict.values())) This shows all the values you can get from the keywords
