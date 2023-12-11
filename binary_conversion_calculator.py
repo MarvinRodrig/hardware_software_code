@@ -1,6 +1,17 @@
+# Written by: Marvin Rodriguez
+# File name: binary_converstion_calculator.py
+# Description: this file converts numbers from
+# binary to decimal and vice versa.
+# The code also checks if the user has given
+# valid input through out the code.
+
+
+# this is needed for the clear_screen function 
 from os import system, name
 
+
 def binary_conversion(decimal):
+# this is where binary numbers are converted to decimal and the user inputs a binary number
     number = 0
     decimal = input("Input binary number to convert to decimal: ")
     for a in decimal:
@@ -8,8 +19,9 @@ def binary_conversion(decimal):
         number += int(a)
     print("The decimal number for " + decimal + " equals " + str(number))
 
-    
+
 def decimal_conversion(binary):
+# this is where decimal number are converted to binary and the user inputs a decimal number 
     number = ''
     binary = int(input("Input decimal number to convert to binary: "))
     u = binary
@@ -53,17 +65,21 @@ def decimal_conversion(binary):
 
 
 def clear_screen():
+# this function clears the screen only when the code is run by the user
+# this function also requires this "from os import system, name" code to be imported to use this function
     if name == 'nt':
         _ = system('cls')
     else:
         _ = system('clear')
 
 
+# this is where the file "starts" and the code ask the user to input a conversion type and when the user
+# gets their completed converted number, the code will also ask if they want to quit/continue with this code
 def main():
-    clear_screen()
-    print("1. Binary -> Decimal")
-    print("2. Decimal -> Binary")
     while True:
+        clear_screen()
+        print("1. Binary -> Decimal")
+        print("2. Decimal -> Binary")
         version = input("Enter conversion type: ")
         if version == '1':
             binary_conversion(version)
@@ -77,10 +93,9 @@ def main():
         else:
             continue
     
-
+# this is the first lines of code that will be run first 
 if __name__ == "__main__":
     main()
-
-#for this project, give a description explaining the code with a date.  
+  
 
 
